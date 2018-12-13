@@ -1,4 +1,4 @@
-package HitBTC
+package hitbtc
 
 const (
 	// http

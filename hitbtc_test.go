@@ -1,4 +1,4 @@
-package HitBTC
+package hitbtc
 
 import (
 	"bytes"
@@ -163,7 +163,7 @@ func TestClient_FetchSymbols(t *testing.T) {
 
 func TestClient_SubscribeToOrderBookFor(t *testing.T) {
 	c := New()
-	books, done, err := c.SubscribeToOrderBookFor("PAXETH")
+	books, done, err := c.SubscribeToOrderBookFor("SBTCUSDT")
 	if err != nil {
 		panic(err)
 	}

@@ -1,4 +1,4 @@
-module github.com/zukiy/HitBTC
+module github.com/zukiy/hitbtc
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
