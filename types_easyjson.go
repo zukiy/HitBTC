@@ -4,7 +4,6 @@ package hitbtc
 
 import (
 	json "encoding/json"
-
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"
 	jwriter "github.com/mailru/easyjson/jwriter"
@@ -18,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC(in *jlexer.Lexer, out *subscribeResult) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc(in *jlexer.Lexer, out *subscribeResult) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -51,7 +50,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC(in *jlexer.Lexer, out *subscribe
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC(out *jwriter.Writer, in subscribeResult) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc(out *jwriter.Writer, in subscribeResult) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -81,27 +80,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC(out *jwriter.Writer, in subscrib
 // MarshalJSON supports json.Marshaler interface
 func (v subscribeResult) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v subscribeResult) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *subscribeResult) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *subscribeResult) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC1(in *jlexer.Lexer, out *subscribeOrderBookResponse) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc1(in *jlexer.Lexer, out *subscribeOrderBookResponse) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -136,7 +135,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC1(in *jlexer.Lexer, out *subscrib
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC1(out *jwriter.Writer, in subscribeOrderBookResponse) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc1(out *jwriter.Writer, in subscribeOrderBookResponse) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -176,25 +175,25 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC1(out *jwriter.Writer, in subscri
 // MarshalJSON supports json.Marshaler interface
 func (v subscribeOrderBookResponse) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC1(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v subscribeOrderBookResponse) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC1(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *subscribeOrderBookResponse) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC1(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *subscribeOrderBookResponse) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC1(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc1(l, v)
 }
 func easyjson6601e8cdDecode(in *jlexer.Lexer, out *struct {
 	Ask       []oBook `json:"ask"`
@@ -367,7 +366,7 @@ func easyjson6601e8cdEncode(out *jwriter.Writer, in struct {
 	}
 	out.RawByte('}')
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC2(in *jlexer.Lexer, out *requestParams) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc2(in *jlexer.Lexer, out *requestParams) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -402,7 +401,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC2(in *jlexer.Lexer, out *requestP
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC2(out *jwriter.Writer, in requestParams) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc2(out *jwriter.Writer, in requestParams) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -442,27 +441,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC2(out *jwriter.Writer, in request
 // MarshalJSON supports json.Marshaler interface
 func (v requestParams) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC2(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc2(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v requestParams) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC2(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc2(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *requestParams) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC2(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc2(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *requestParams) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC2(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc2(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC3(in *jlexer.Lexer, out *params) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc3(in *jlexer.Lexer, out *params) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -493,7 +492,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC3(in *jlexer.Lexer, out *params) 
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC3(out *jwriter.Writer, in params) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc3(out *jwriter.Writer, in params) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -513,27 +512,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC3(out *jwriter.Writer, in params)
 // MarshalJSON supports json.Marshaler interface
 func (v params) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC3(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc3(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v params) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC3(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc3(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *params) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC3(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc3(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *params) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC3(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc3(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC4(in *jlexer.Lexer, out *oBook) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc4(in *jlexer.Lexer, out *oBook) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -566,7 +565,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC4(in *jlexer.Lexer, out *oBook) {
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC4(out *jwriter.Writer, in oBook) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc4(out *jwriter.Writer, in oBook) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -596,27 +595,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC4(out *jwriter.Writer, in oBook) 
 // MarshalJSON supports json.Marshaler interface
 func (v oBook) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC4(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc4(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v oBook) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC4(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc4(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *oBook) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC4(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc4(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *oBook) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC4(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc4(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC5(in *jlexer.Lexer, out *Symbols) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc5(in *jlexer.Lexer, out *Symbols) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -644,7 +643,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC5(in *jlexer.Lexer, out *Symbols)
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC5(out *jwriter.Writer, in Symbols) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc5(out *jwriter.Writer, in Symbols) {
 	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 		out.RawString("null")
 	} else {
@@ -662,27 +661,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC5(out *jwriter.Writer, in Symbols
 // MarshalJSON supports json.Marshaler interface
 func (v Symbols) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC5(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc5(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Symbols) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC5(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc5(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Symbols) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC5(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc5(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Symbols) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC5(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc5(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC6(in *jlexer.Lexer, out *Symbol) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc6(in *jlexer.Lexer, out *Symbol) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -727,7 +726,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC6(in *jlexer.Lexer, out *Symbol) 
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC6(out *jwriter.Writer, in Symbol) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc6(out *jwriter.Writer, in Symbol) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -817,27 +816,27 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC6(out *jwriter.Writer, in Symbol)
 // MarshalJSON supports json.Marshaler interface
 func (v Symbol) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC6(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc6(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Symbol) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC6(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc6(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Symbol) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC6(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc6(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Symbol) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC6(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc6(l, v)
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitBTC7(in *jlexer.Lexer, out *Err) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc7(in *jlexer.Lexer, out *Err) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -868,7 +867,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitBTC7(in *jlexer.Lexer, out *Err) {
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitBTC7(out *jwriter.Writer, in Err) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc7(out *jwriter.Writer, in Err) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -888,25 +887,25 @@ func easyjson6601e8cdEncodeGithubComZukiyHitBTC7(out *jwriter.Writer, in Err) {
 // MarshalJSON supports json.Marshaler interface
 func (v Err) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC7(&w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc7(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Err) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6601e8cdEncodeGithubComZukiyHitBTC7(w, v)
+	easyjson6601e8cdEncodeGithubComZukiyHitbtc7(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Err) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC7(&r, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc7(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Err) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6601e8cdDecodeGithubComZukiyHitBTC7(l, v)
+	easyjson6601e8cdDecodeGithubComZukiyHitbtc7(l, v)
 }
 func easyjson6601e8cdDecode1(in *jlexer.Lexer, out *struct {
 	Code        int    `json:"code"`
