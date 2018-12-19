@@ -2,20 +2,21 @@ package hitbtc
 
 const (
 	// http
-	cApiUrlRest   = `https://api.hitbtc.com/api/2`
+	cAPIURLRest   = `https://api.hitbtc.com/api/2`
 	cFetchSymbols = `/public/symbol`
 	cFetchSymbol  = `/public/symbol/%s`
 
 	// ws
-	cApiStreamingScheme  = `wss`
-	cApiUrlStreamingHost = `api.hitbtc.com`
-	cApiUrlStreamingPath = `api/2/ws`
+	cAPIStreamingScheme  = `wss`
+	cAPIURLStreamingHost = `api.hitbtc.com`
+	cAPIUrlStreamingPath = `api/2/ws`
 
+	// CSubscribeOrderbook method name
 	CSubscribeOrderbook = "subscribeOrderbook"
 
-	// CSnapshotOrderbook notification snapshot
+	// CSnapshotOrderbookMethod notification snapshot
 	CSnapshotOrderbookMethod = "snapshotOrderbook"
 
-	// CSnapshotOrderbook notification update
+	// CUpdateOrderbookMethod notification update
 	CUpdateOrderbookMethod = "updateOrderbook"
 )

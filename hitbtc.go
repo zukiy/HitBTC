@@ -38,7 +38,7 @@ func NewWithHTTPClient(httpClient httpFetcher) *Client {
 func (c *Client) FetchSymbols() (Symbols, error) {
 	list := make(Symbols, 0)
 
-	bytes, err := c.request(http.MethodGet, cApiUrlRest+cFetchSymbols, nil)
+	bytes, err := c.request(http.MethodGet, cAPIURLRest+cFetchSymbols, nil)
 	if err != nil {
 		return list, err
 	}
@@ -53,7 +53,7 @@ func (c *Client) FetchSymbols() (Symbols, error) {
 
 // FetchSymbol return symbol
 func (c *Client) FetchSymbol(symbol string) (*Symbol, error) {
-	bytes, err := c.request(http.MethodGet, cApiUrlRest+fmt.Sprintf(cFetchSymbol, symbol), nil)
+	bytes, err := c.request(http.MethodGet, cAPIURLRest+fmt.Sprintf(cFetchSymbol, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -67,17 +67,18 @@ func (c *Client) FetchSymbol(symbol string) (*Symbol, error) {
 	return s, nil
 }
 
-// FetchSymbol return symbol
-func (c *Client) SubscribeToOrderBookFor(symbol string) (oBooks SubscribeOrderBookResponseChan, doneChan DoneChan, err error) {
+// SubscribeToOrderBookFor return symbol
+func (c *Client) SubscribeToOrderBookFor(symbol string) (oBooks SubscribeOrderBookResponseChan, doneChan DoneChan, errHandler ErrorHandler) {
 	u := url.URL{
-		Scheme: cApiStreamingScheme,
-		Host:   cApiUrlStreamingHost,
-		Path:   cApiUrlStreamingPath,
+		Scheme: cAPIStreamingScheme,
+		Host:   cAPIURLStreamingHost,
+		Path:   cAPIUrlStreamingPath,
 	}
 
 	// init websocket
 	conn, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
 	if err != nil {
+		errHandler(err)
 		return
 	}
 
@@ -90,12 +91,14 @@ func (c *Client) SubscribeToOrderBookFor(symbol string) (oBooks SubscribeOrderBo
 	}.MarshalJSON()
 
 	if err != nil {
+		errHandler(err)
 		return
 	}
 
 	// subscribe
 	err = conn.WriteMessage(websocket.TextMessage, requestParams)
 	if err != nil {
+		errHandler(err)
 		return
 	}
 
@@ -108,11 +111,12 @@ func (c *Client) SubscribeToOrderBookFor(symbol string) (oBooks SubscribeOrderBo
 	subscribeResult := subscribeResult{}
 	err = subscribeResult.UnmarshalJSON(r)
 	if err != nil {
+		errHandler(err)
 		return
 	}
 
 	if !subscribeResult.Result {
-		err = fmt.Errorf("cant subscribe to orderbook for %s", symbol)
+		errHandler(fmt.Errorf("cant subscribe to orderbook for %s", symbol))
 		return
 	}
 
@@ -128,12 +132,14 @@ func (c *Client) SubscribeToOrderBookFor(symbol string) (oBooks SubscribeOrderBo
 			default:
 				_, r, err := conn.ReadMessage()
 				if err != nil {
-					continue
+					errHandler(err)
+					return
 				}
 
 				response := SubscribeOrderBookResponse{}
 				err = response.UnmarshalJSON(r)
 				if err != nil {
+					errHandler(err)
 					continue
 				}
 
@@ -169,7 +175,7 @@ func (c *Client) request(method, url string, body []byte) (response []byte, err 
 		e := Err{}
 		err = e.UnmarshalJSON(response)
 		if err != nil {
-			return response, err
+			return response, fmt.Errorf("json has incorrect data")
 		}
 		return response, errors.New(e.Error())
 	}

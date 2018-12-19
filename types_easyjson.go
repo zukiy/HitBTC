@@ -37,7 +37,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitbtc(in *jlexer.Lexer, out *subscribe
 		}
 		switch key {
 		case "jsonrpc":
-			out.JsonRPC = string(in.String())
+			out.JSONRPC = string(in.String())
 		case "result":
 			out.Result = bool(in.Bool())
 		default:
@@ -62,7 +62,7 @@ func easyjson6601e8cdEncodeGithubComZukiyHitbtc(out *jwriter.Writer, in subscrib
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.JsonRPC))
+		out.String(string(in.JSONRPC))
 	}
 	{
 		const prefix string = ",\"result\":"
@@ -507,7 +507,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitbtc5(in *jlexer.Lexer, out *Subscrib
 		}
 		switch key {
 		case "jsonrpc":
-			out.JsonRPC = string(in.String())
+			out.JSONRPC = string(in.String())
 		case "method":
 			out.Method = string(in.String())
 		case "params":
@@ -534,7 +534,7 @@ func easyjson6601e8cdEncodeGithubComZukiyHitbtc5(out *jwriter.Writer, in Subscri
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.JsonRPC))
+		out.String(string(in.JSONRPC))
 	}
 	{
 		const prefix string = ",\"method\":"
@@ -583,8 +583,8 @@ func (v *SubscribeOrderBookResponse) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson6601e8cdDecodeGithubComZukiyHitbtc5(l, v)
 }
 func easyjson6601e8cdDecode(in *jlexer.Lexer, out *struct {
-	Ask       []OBook `json:"ask"`
-	Bid       []OBook `json:"bid"`
+	Ask       []Order `json:"ask"`
+	Bid       []Order `json:"bid"`
 	Symbol    string  `json:"symbol"`
 	Sequence  int64   `json:"sequence"`
 	Timestamp string  `json:"timestamp"`
@@ -615,15 +615,15 @@ func easyjson6601e8cdDecode(in *jlexer.Lexer, out *struct {
 				in.Delim('[')
 				if out.Ask == nil {
 					if !in.IsDelim(']') {
-						out.Ask = make([]OBook, 0, 4)
+						out.Ask = make([]Order, 0, 4)
 					} else {
-						out.Ask = []OBook{}
+						out.Ask = []Order{}
 					}
 				} else {
 					out.Ask = (out.Ask)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 OBook
+					var v4 Order
 					(v4).UnmarshalEasyJSON(in)
 					out.Ask = append(out.Ask, v4)
 					in.WantComma()
@@ -638,15 +638,15 @@ func easyjson6601e8cdDecode(in *jlexer.Lexer, out *struct {
 				in.Delim('[')
 				if out.Bid == nil {
 					if !in.IsDelim(']') {
-						out.Bid = make([]OBook, 0, 4)
+						out.Bid = make([]Order, 0, 4)
 					} else {
-						out.Bid = []OBook{}
+						out.Bid = []Order{}
 					}
 				} else {
 					out.Bid = (out.Bid)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v5 OBook
+					var v5 Order
 					(v5).UnmarshalEasyJSON(in)
 					out.Bid = append(out.Bid, v5)
 					in.WantComma()
@@ -670,8 +670,8 @@ func easyjson6601e8cdDecode(in *jlexer.Lexer, out *struct {
 	}
 }
 func easyjson6601e8cdEncode(out *jwriter.Writer, in struct {
-	Ask       []OBook `json:"ask"`
-	Bid       []OBook `json:"bid"`
+	Ask       []Order `json:"ask"`
+	Bid       []Order `json:"bid"`
 	Symbol    string  `json:"symbol"`
 	Sequence  int64   `json:"sequence"`
 	Timestamp string  `json:"timestamp"`
@@ -753,7 +753,7 @@ func easyjson6601e8cdEncode(out *jwriter.Writer, in struct {
 	}
 	out.RawByte('}')
 }
-func easyjson6601e8cdDecodeGithubComZukiyHitbtc6(in *jlexer.Lexer, out *OBook) {
+func easyjson6601e8cdDecodeGithubComZukiyHitbtc6(in *jlexer.Lexer, out *Order) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -786,7 +786,7 @@ func easyjson6601e8cdDecodeGithubComZukiyHitbtc6(in *jlexer.Lexer, out *OBook) {
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComZukiyHitbtc6(out *jwriter.Writer, in OBook) {
+func easyjson6601e8cdEncodeGithubComZukiyHitbtc6(out *jwriter.Writer, in Order) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -814,26 +814,26 @@ func easyjson6601e8cdEncodeGithubComZukiyHitbtc6(out *jwriter.Writer, in OBook) 
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v OBook) MarshalJSON() ([]byte, error) {
+func (v Order) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
 	easyjson6601e8cdEncodeGithubComZukiyHitbtc6(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v OBook) MarshalEasyJSON(w *jwriter.Writer) {
+func (v Order) MarshalEasyJSON(w *jwriter.Writer) {
 	easyjson6601e8cdEncodeGithubComZukiyHitbtc6(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *OBook) UnmarshalJSON(data []byte) error {
+func (v *Order) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
 	easyjson6601e8cdDecodeGithubComZukiyHitbtc6(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *OBook) UnmarshalEasyJSON(l *jlexer.Lexer) {
+func (v *Order) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson6601e8cdDecodeGithubComZukiyHitbtc6(l, v)
 }
 func easyjson6601e8cdDecodeGithubComZukiyHitbtc7(in *jlexer.Lexer, out *Err) {

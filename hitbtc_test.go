@@ -22,7 +22,7 @@ func Test_Request(t *testing.T) {
 	}{
 		{
 			http.MethodGet,
-			cApiUrlRest + cFetchSymbols,
+			cAPIURLRest + cFetchSymbols,
 			http.StatusOK,
 			nil,
 			[]byte{},
