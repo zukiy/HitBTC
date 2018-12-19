@@ -158,12 +158,12 @@ func (c *Client) request(method, url string, body []byte) (response []byte, err 
 	if err != nil {
 		return response, err
 	}
+	defer resp.Body.Close()
 
 	response, err = ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return response, err
 	}
-	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
 		e := Err{}
