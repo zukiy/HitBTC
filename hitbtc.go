@@ -132,7 +132,7 @@ func (c *Client) SubscribeToOrderBookFor(symbol string, tickHandler TickHandler,
 				default:
 					_, r, err := conn.ReadMessage()
 					if err != nil {
-						errHandler(err)
+						errChan <- err
 						return
 					}
 
